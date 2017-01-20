@@ -167,7 +167,7 @@ To do this we will push a custom PostgreSQL Studio application to Predix.
 
 4. Using the command line navigate to your pgStudio folder `cd pg_studio_1.2_cf`
 
-5. Push the application to Predix using `cf push MYPGSTUDIOAPP`
+5. Push the application to Predix using `cf push MYPGSTUDIOAPP -m 500M`
 
 6. Open the application in the web browser and use the environment variables you copied and pasted into the application above to login
 
