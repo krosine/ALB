@@ -64,7 +64,7 @@
         **/
         
         /**In Successful query display results in a html table format.
-           table elements include the following attributes:
+           table element includes the following attributes:
            id="example" class="display" cellspacing="0" width="100%"
         **/
 
