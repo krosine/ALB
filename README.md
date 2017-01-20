@@ -35,6 +35,12 @@ Notepad++ :
 
 https://notepad-plus-plus.org/download/v6.9.1.html
 
+#####Git
+Github is an SVN tool used for mass collaboration to build software. Resources, such as seed applications, for Predix and other open source systems are located on Github. Git is the tool used to copy software from a Git hub repository, as well as save updated versions, branch, etc. via the command line.
+
+Download and install here:
+https://git-scm.com/
+
 #####Proxy
 The external instance of Predix will not allow you to connect when on BLUESSO without setting your proxy.
 
@@ -53,3 +59,11 @@ Go to terminal, type:
 
 #####Predix API Endpoint
 `https://api.system.aws-usw02-pr.ice.predix.io`
+
+####Our Application
+Create a new folder on your computer, open your command line interface and navigate to that new folder location.
+
+Clone the template php application using the following command:
+'git clone https://github.com/krosine/ALB.git'
+
+
