@@ -64,6 +64,7 @@ Go to terminal, type:
 Create a new folder on your computer, open your command line interface and navigate to that new folder location.
 
 Clone the template php application using the following command:
-'git clone https://github.com/krosine/ALB.git'
+`git clone https://github.com/krosine/ALB.git`
+
 
 
