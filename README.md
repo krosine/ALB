@@ -153,3 +153,29 @@ You will now see a new folder called 'ALB' with a index.php and README.md file i
    You can use the same app name you used the first time.
 
 6. Once the push is complete, open up the page in your web browser, and you will see the error message is gone and your database connection has been made.
+
+####Manage your database
+Now that you have connected a database to your application, you will now need to manage it (add tables, data, etc.) in order to display that data within the app.
+
+To do this we will push a custom PostgreSQL Studio application to Predix. 
+
+1. Use the command line to navigate to the first folder you created (e.g. `cd ..`)
+
+2. Use the following git command to clone the pgStudio application into your folder: `git clone https://github.com/john-k-ge/pg_studio_1.2_cf.git`
+
+3. Open the manifest.yml file, update the application name and save
+
+4. Using the command line navigate to your pgStudio folder `cd pg_studio_1.2_cf`
+
+5. Push the application to Predix using `cf push MYPGSTUDIOAPP`
+
+6. Open the application in the web browser and use the environment variables you copied and pasted into the application above to login
+
+####Create a table and add data
+The PgStudio application allows for the use of the GUI interface and script based table creation. You can use any data set(s) you want to create the table and then use SQL script to insert your data. If your data is in a csv, excel or text file there are online tools available to convert those to the needed script (e.g. http://codebeautify.org/).
+
+####Query data
+Use php PostgreSQL funtions documentation at http://php.net/manual/en/ref.pgsql.php to write if/else statement to test whether query was successful and display "Query Successful" or "Query Unsuccessful" on the webpage.
+
+####Visualize data
+A jQuery DataTable plugin has already been included and initialized in index.php. Within the if/else statement created above, display results of a successful query in a html table format.Utilize documentation at http://php.net/manual/en/ref.pgsql.php to write table rows. The table element should include the following attributes: id="example" class="display" cellspacing="0" width="100%"
