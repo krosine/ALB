@@ -149,7 +149,7 @@ You will now see a new folder called 'ALB' with a index.php and README.md file i
 
 5. With your PHP code now updated, let's push it again to Predix using the same Cloud Foundry command you used before:
 
-   `cf push MYAPP -b https://github.com/sethdesantis/php-buildpack`
+   `cf push MYAPP -m 128M -b https://github.com/sethdesantis/php-buildpack`
    You can use the same app name you used the first time.
 
 6. Once the push is complete, open up the page in your web browser, and you will see the error message is gone and your database connection has been made.
