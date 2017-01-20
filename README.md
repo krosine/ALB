@@ -61,10 +61,93 @@ Go to terminal, type:
 `https://api.system.aws-usw02-pr.ice.predix.io`
 
 ####Our Application
-Create a new folder on your computer, open your command line interface and navigate to that new folder location.
 
-Clone the template php application using the following command:
+1. Create a new folder on your computer
+2. Open your command line interface
+3. Navigate to that new folder location
+4. Clone the template php application using the following command:
 `git clone https://github.com/krosine/ALB.git`
 
+You will now see a new folder called 'ALB' with a index.php and README.md file inside. You can open that folder location using whatever text editory you installed above.
 
+####Log Into Predix
 
+1. Open your command line application (CMD on Windows, Terminal on Mac)
+
+2. Set your proxy with the applicable command above
+
+3. Log into Predix
+'cf login'
+
+4. Enter the API endpoint (listed above) if prompted for it.
+
+5. Enter your email and password, which is the credentials you use to access Predix.io
+
+6. Select a space, if prompted
+
+####Push your application to Predix
+
+1. On the command line, navigate to the folder you created above, where index.php is located
+   `cd PATH_TO_FOLDER`
+
+2. Once at your folder, you will push your application
+   `cf push MYAPP -b https://github.com/sethdesantis/php-buildpack`
+
+   #####Explanation:
+
+   `cf push MYAPP` : this is the basic command to push an application, replace MYAPP with a name that will be unique across all of Predix.
+
+   `-b https://github.com/sethdesantis/php-buildpack` : although Cloud Foundry is usually smart enough to detect the language of your application and deploy the appropriate buildpack, sometimes you will want to specify your own buildpack. In this case, we are specifying a buildpack with has PHP configured with the files necesary to connect to a Postgres database.
+
+3. Once the push is complete, open up the page in your web browser, the url will be:
+
+   http://MYAPP.run.aws-usw02-pr.ice.predix.io/
+
+   Where MYAPP is the name you gave it when pushing.
+
+4. You will see that your page is displayed, but there is a database error.
+
+####Create a database service and bind it to your application
+
+1. Create a Postgres Database Service
+
+   `cf create-service postgres shared-nr MYSERVICE`
+
+   #####Explanation:
+
+   `postgres`  : is the name of the service we are creating
+   `shared-nr` : is the plan
+   `MYSERVICE` : is the name you will give this Service
+
+   ######Tip: You can view all available services with their plans and description by typing:
+   `cf marketplace`
+
+2. Bind the service to your application
+
+   `cf bind-service MYAPP MYSERVICE`
+
+   #####Explanation:
+   `MYAPP` : is the name of the application that previously created and pushed to Predix
+   `MYSERVICE` : is the name of the service we just created
+
+   You will see a message about restaging your application, we wont do this because we need to get the database credentials and enter them in your application code.
+
+4. Get your database credentials by reviewing the app you bound it to
+
+   `CF env MYAPP`
+
+   #####Explanation:
+   This command will give you all of the environmental variables of your application. Since we have bound our database service to the application, we can get the credentials (username, password, database, host) we need.
+
+   For the data that is outputted from this command, look for the values that are labeled:
+   database, host, user, password
+
+   And copy these values into your code into the respective variables, in between the single quotes.
+   $dbname, $host , $user, $pw
+
+5. With your PHP code now updated, let's push it again to Predix using the same Cloud Foundry command you used before:
+
+   `cf push MYAPP -b https://github.com/sethdesantis/php-buildpack`
+   You can use the same app name you used the first time.
+
+6. Once the push is complete, open up the page in your web browser, and you will see the error message is gone and your database connection has been made.
