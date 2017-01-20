@@ -36,7 +36,7 @@ Notepad++ :
 https://notepad-plus-plus.org/download/v6.9.1.html
 
 #####Git
-Github is an SVN tool used for mass collaboration to build software. Resources, such as seed applications, for Predix and other open source systems are located on Github. Git is the tool used to copy software from a Git hub repository, as well as save updated versions, branch, etc. via the command line.
+Github is an SVN tool used for mass collaboration to build software. Resources, such as seed applications, for Predix and other open source systems are located on Github. Git is the tool used to copy software from a Github repository, as well as save updated versions, branch, etc. via the command line.
 
 Download and install here:
 https://git-scm.com/
@@ -172,10 +172,18 @@ To do this we will push a custom PostgreSQL Studio application to Predix.
 6. Open the application in the web browser and use the environment variables you copied and pasted into the application above to login
 
 ####Create a table and add data
-The PgStudio application allows for the use of the GUI interface and script based table creation. You can use any data set(s) you want to create the table and then use SQL script to insert your data. If your data is in a csv, excel or text file there are online tools available to convert those to the needed script (e.g. http://codebeautify.org/).
+The PgStudio application allows for the use of the GUI interface and script based table creation. 
+
+You can use any data set(s) you want to create the table and then use SQL script to insert your data. 
+
+If your data is in a csv, excel or text file there are online tools available to convert those to the needed script (e.g. http://codebeautify.org/).
 
 ####Query data
 Use php PostgreSQL funtions documentation at http://php.net/manual/en/ref.pgsql.php to write if/else statement to test whether query was successful and display "Query Successful" or "Query Unsuccessful" on the webpage.
 
 ####Visualize data
-A jQuery DataTable plugin has already been included and initialized in index.php. Within the if/else statement created above, display results of a successful query in a html table format.Utilize documentation at http://php.net/manual/en/ref.pgsql.php to write table rows. The table element should include the following attributes: id="example" class="display" cellspacing="0" width="100%"
+A jQuery DataTable plugin has already been included and initialized in index.php. 
+
+Within the if/else statement created above, display results of a successful query in a html table format.Utilize documentation at http://php.net/manual/en/ref.pgsql.php to write table rows. 
+
+The table element should include the following attributes: id="example" class="display" cellspacing="0" width="100%"
