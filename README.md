@@ -91,12 +91,12 @@ You will now see a new folder called 'ALB' with a index.php and README.md file i
    `cd PATH_TO_FOLDER`
 
 2. Once at your folder, you will push your application
-   `cf push MYAPP -b https://github.com/sethdesantis/php-buildpack`
+   `cf push MYAPP -m 128M -b https://github.com/sethdesantis/php-buildpack`
 
    #####Explanation:
 
    `cf push MYAPP` : this is the basic command to push an application, replace MYAPP with a name that will be unique across all of Predix.
-
+   `-m 128M` : an application usually includes a manifest.yml file that specifies application details such as memory allocation. In this case there is no manifest.yml file so we need to tell Cloud Foundry how much memory to allocate for the application.
    `-b https://github.com/sethdesantis/php-buildpack` : although Cloud Foundry is usually smart enough to detect the language of your application and deploy the appropriate buildpack, sometimes you will want to specify your own buildpack. In this case, we are specifying a buildpack with has PHP configured with the files necesary to connect to a Postgres database.
 
 3. Once the push is complete, open up the page in your web browser, the url will be:
