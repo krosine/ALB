@@ -63,7 +63,7 @@ Go to terminal, type:
 ####Our Application
 
 1. Create a new folder on your computer
-2. Open your command line interface
+2. Open your command line application (CMD on Windows, Terminal on Mac)
 3. Navigate to that new folder location
 4. Clone the template php application using the following command:
 `git clone https://github.com/krosine/ALB.git`
@@ -77,7 +77,7 @@ You will now see a new folder called 'ALB' with a index.php and README.md file i
 2. Set your proxy with the applicable command above
 
 3. Log into Predix
-'cf login'
+`cf login`
 
 4. Enter the API endpoint (listed above) if prompted for it.
 
