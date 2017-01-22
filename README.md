@@ -103,7 +103,7 @@ You will now see a new folder called 'ALB' with a index.php and README.md file i
 
 3. Once the push is complete, open up the page in your web browser, the url will be:
 
-   http://MYAPP.run.aws-usw02-pr.ice.predix.io/
+   https://MYAPP.run.aws-usw02-pr.ice.predix.io/
 
    Where MYAPP is the name you gave it when pushing.
 
