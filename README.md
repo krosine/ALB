@@ -144,7 +144,7 @@ You will now see a new folder called 'ALB' with a index.php and README.md file i
    For the data that is outputted from this command, look for the values that are labeled:
    database, host, user, password
 
-   And copy these values into your code into the respective variables, in between the single quotes.
+   And copy these values into your code into the respective variables, in between the single quotes **in the index.php file**.
    $dbname, $host , $user, $pw
 
 
