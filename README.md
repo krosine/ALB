@@ -147,6 +147,9 @@ You will now see a new folder called 'ALB' with a index.php and README.md file i
    And copy these values into your code into the respective variables, in between the single quotes.
    $dbname, $host , $user, $pw
 
+
+   ######Tip: You can output the results of this command to a file, by typing '> filename.txt'. The full command will then read 'cf env MYAPP > filename.txt'
+
 5. With your PHP code now updated, let's push it again to Predix using the same Cloud Foundry command you used before:
 
    `cf push MYAPP -m 128M -b https://github.com/sethdesantis/php-buildpack`
